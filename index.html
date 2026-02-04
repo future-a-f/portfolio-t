@@ -6,9 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <!-- Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,13 +26,13 @@
     <meta property="og:image" content="assets/images/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Tabitha ~ Musyoki</title>
+    <title>Tabitha Musyoki - Administrative & Project Management</title>
 </head>
 
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <header class="site-nav" id="navbar">
       <div class="container nav-inner">
         <a href="#home" class="nav-brand" aria-label="Home">
           <img src="assets/images/logo.svg" alt="Tabitha Musyoki" width="40" height="40">
@@ -49,7 +46,6 @@
           <li role="none"><a role="menuitem" href="#research">Research</a></li>
           <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
           <li role="none"><a role="menuitem" href="#certifications">Certifications</a></li>
-          <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
         </ul>
 
         <div class="nav-right">
@@ -61,56 +57,50 @@
         </div>
       </div>
 
-      <!-- Off-canvas mobile drawer -->
+      <!-- Off-canvas mobile drawer (menu items generated from desktop nav) -->
       <div id="nav-drawer" class="nav-drawer" aria-hidden="true" aria-label="Mobile menu">
         <button class="drawer-close" aria-label="Close menu">×</button>
-        <ul class="drawer-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#practice">Practice</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav aria-label="Mobile primary">
+          <ul id="drawer-menu" class="drawer-menu" role="menubar" aria-label="Mobile menu">
+            <!-- Populated by script.js from #nav-menu to avoid duplicated markup -->
+          </ul>
+        </nav>
       </div>
 
       <div class="nav-overlay" tabindex="-1" aria-hidden="true"></div>
-    </nav>
+    </header>
 
     <!-- Hero / Identity -->
     <header id="home" class="hero">
-        <div class="container">
-            <h1>Administrative, Project & Operations Management Professional</h1>
-            <p class="hero-subtitle">
-                Supporting executive leadership, projects, and institutional
-                operations through structured administration, analytical thinking, and
-                efficient coordination.
-            </p>
+      <div class="hero-card container">
+        <div class="hero-content">
+          <h1>Administrative, Project & Operations Management Professional</h1>
+          <p class="hero-subtitle">
+            Supporting executive leadership, projects, and institutional operations through
+            structured administration, analytical thinking, and efficient coordination.
+          </p>
 
-            <p class="hero-tag">Project &amp; Operations Manager • Nairobi • Open to remote roles</p>
+          <p class="hero-tag">Project &amp; Operations Manager • Nairobi • Open to remote roles</p>
 
-            <p class="hero-intro">
-                I am a results-driven administrative and project management
-                professional with a strong academic foundation in
-                <strong>Project Management, Economics, and Sociology</strong>, and
-                over <strong>five years of experience</strong> supporting executive
-                leadership, institutional operations, and compliance-driven
-                environments.
-            </p>
+          <p class="hero-intro">
+            I am a results-driven administrative and project management professional with a strong academic
+            foundation in <strong>Project Management, Economics, and Sociology</strong>, and over
+            <strong>five years of experience</strong> supporting executive leadership, institutional operations,
+            and compliance-driven environments.
+          </p>
 
-            <figure class="hero-media">
-                <img src="assets/images/me.jpg" alt="Tabitha Musyoki — professional portrait" class="hero-portrait" loading="lazy" width="340" height="340">
-            </figure>
-
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Contact Me</a>
-                <a href="documents/Tabitha-Wayua-Musyoki-CV.pdf" class="btn-secondary" download>
-                    Download CV
-                </a>
-            </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn-primary">Contact Me</a>
+            <a href="documents/Tabitha-Wayua-Musyoki-CV.pdf" class="btn-secondary" download>
+              Download CV
+            </a>
+          </div>
         </div>
+
+        <figure class="hero-media">
+          <img src="assets/images/me.jpeg" alt="Tabitha Musyoki — professional portrait" class="hero-portrait" loading="lazy" width="340" height="340">
+        </figure>
+      </div>
     </header>
 
     <main id="main">
@@ -337,42 +327,37 @@
 
     <!-- Contact -->
     <footer id="contact" class="footer">
-        <div class="container">
-            <h2>Contact</h2>
-
-            <p>
-                Open to professional opportunities within administrative management,
-                project support, operations, and program coordination.
-            </p>
-
-            <ul class="contact-details">
-                <li><strong>Location:</strong> Nairobi, Kenya</li>
-                <li>
-                    <strong>Availability:</strong> Open to remote and global roles
-                </li>
-                <li>
-                    <strong>Email:</strong>
-                    <a href="mailto:musyokitabitha@gmail.com">musyokitabitha@gmail.com</a>
-                </li>
-                <li>
-                    <strong>LinkedIn:</strong>
-                    <a href="https://linkedin.com/in/tabitha-musyoki" target="_blank" rel="noopener noreferrer">
-                        linkedin.com/in/tabitha-musyoki
-                    </a>
-                </li>
-            </ul>
+      <div class="container footer-grid">
+        <div class="footer-col contact-col">
+          <h2>Contact</h2>
+          <p>Open to professional opportunities within administrative management, project support, operations, and program coordination.</p>
+          <ul class="contact-details">
+            <li><strong>Location:</strong> Nairobi, Kenya</li>
+            <li><strong>Availability:</strong> Open to remote and global roles</li>
+            <li><strong>Email:</strong> <a href="mailto:musyokitabitha@gmail.com">musyokitabitha@gmail.com</a></li>
+          </ul>
         </div>
+
+        <div class="footer-col links-col" aria-label="Quick links">
+          <h3>Quick links</h3>
+          <ul id="footer-links" class="footer-links" role="menubar" aria-label="Footer navigation">
+            <!-- Populated by script.js from #nav-menu to avoid duplicated markup -->
+          </ul>
+        </div>
+
+        <div class="footer-col social-col">
+          <h3>Connect</h3>
+          <ul class="social-list">
+            <li><a href="https://linkedin.com/in/tabitha-musyoki" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
+            <li><a href="mailto:musyokitabitha@gmail.com" rel="noopener noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a></li>
+          </ul>
+          <p class="copyright">&copy; 2026 Tabitha Musyoki. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
     <button class="back-to-top" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button>
-    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <span aria-hidden="true">🌙</span>
-    </button>
-    <div class="particles" aria-hidden="true"></div>
+
     <script src="assets/js/script.js" defer></script>
 </body>
 

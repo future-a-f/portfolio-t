@@ -2,21 +2,18 @@
  * - Smooth scroll fallback for same-page anchors
  * - Skip-link focus handling for accessibility
  * - Dark mode toggle functionality
- * - Particle animation system
- * - Advanced UI interactions
+ * - Navigation functionality
  */
 
 // Dark mode functionality
 function initDarkMode() {
   const themeToggle = document.querySelector('.theme-toggle');
   const body = document.body;
-  const html = document.documentElement;
   
   // Check for saved theme preference or default to light mode
   const currentTheme = localStorage.getItem('theme') || 'light';
   if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
-    themeToggle.querySelector('span').textContent = '☀️';
   }
   
   // Theme toggle functionality
@@ -24,9 +21,6 @@ function initDarkMode() {
     themeToggle.addEventListener('click', function() {
       body.classList.toggle('dark-mode');
       const isDarkMode = body.classList.contains('dark-mode');
-      
-      // Update icon
-      themeToggle.querySelector('span').textContent = isDarkMode ? '☀️' : '🌙';
       
       // Save preference
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
@@ -40,143 +34,10 @@ function initDarkMode() {
   }
 }
 
-// Particle animation system
-function initParticles() {
-  const particlesContainer = document.querySelector('.particles');
-  if (!particlesContainer) return;
-  
-  const particleCount = 20;
-  const particles = [];
-  
-  for (let i = 0; i < particleCount; i++) {
-    createParticle();
-  }
-  
-  function createParticle() {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random size
-    const size = Math.random() * 4 + 2;
-    particle.style.width = size + 'px';
-    particle.style.height = size + 'px';
-    
-    // Random position
-    particle.style.left = Math.random() * 100 + '%';
-    
-    // Random animation duration and delay
-    const duration = Math.random() * 10 + 10;
-    const delay = Math.random() * 10;
-    particle.style.animationDuration = duration + 's';
-    particle.style.animationDelay = delay + 's';
-    
-    particlesContainer.appendChild(particle);
-    particles.push(particle);
-  }
-}
-
-// Enhanced skill bar animations
-function initSkillBars() {
-  const skillBars = document.querySelectorAll('.skill-fill');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const skillFill = entry.target;
-        const skillLevel = skillFill.getAttribute('data-skill-level') || '85';
-        skillFill.style.width = skillLevel + '%';
-        observer.unobserve(skillFill);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  skillBars.forEach(bar => observer.observe(bar));
-}
-
-// Timeline animations
-function initTimeline() {
-  const timelineItems = document.querySelectorAll('.timeline-item');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 200);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  timelineItems.forEach(item => observer.observe(item));
-}
-
-// Floating action button functionality
-function initFAB() {
-  const fab = document.querySelector('.fab');
-  if (!fab) return;
-  
-  fab.addEventListener('click', function() {
-    // Scroll to top or open contact modal
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-// Enhanced micro-interactions
-function initMicroInteractions() {
-  // Add ripple effect to buttons
-  const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-  
-  buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      
-      const rect = this.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const x = e.clientX - rect.left - size / 2;
-      const y = e.clientY - rect.top - size / 2;
-      
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => {
-        ripple.remove();
-      }, 600);
-    });
-  });
-}
-
-// Loading animation
-function showLoadingAnimation() {
-  const loader = document.createElement('div');
-  loader.className = 'page-loader';
-  loader.innerHTML = '<div class="loader-spinner"></div>';
-  document.body.appendChild(loader);
-  
-  setTimeout(() => {
-    loader.classList.add('fade-out');
-    setTimeout(() => {
-      loader.remove();
-    }, 500);
-  }, 1000);
-}
-
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-  // Show loading animation
-  showLoadingAnimation();
-  
   // Initialize all features
   initDarkMode();
-  initParticles();
-  initSkillBars();
-  initTimeline();
-  initFAB();
-  initMicroInteractions();
   
   // Smooth scroll for same-page anchors (fallback for older browsers)
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -186,7 +47,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var target = document.querySelector(href);
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
+          var navHeight = document.querySelector('.site-nav').offsetHeight;
+          var targetPosition = target.offsetTop - navHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
           // Set focus for accessibility
           target.setAttribute('tabindex', '-1');
           target.focus({ preventScroll: true });
@@ -225,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
     if (drawerClose) drawerClose.focus();
   }
+  
   function closeDrawer() {
     navDrawer.classList.remove('open');
     navOverlay.classList.remove('open');
@@ -235,6 +102,45 @@ document.addEventListener('DOMContentLoaded', function () {
     navToggle.focus();
   }
 
+  // Populate mobile drawer and footer quick-links from the single source (#nav-menu)
+  function populateMenus() {
+    var navMenu = document.getElementById('nav-menu');
+    var drawerMenu = document.getElementById('drawer-menu');
+    var footerMenu = document.getElementById('footer-links');
+    if (!navMenu) return;
+    var links = navMenu.querySelectorAll('a');
+
+    if (drawerMenu) {
+      drawerMenu.innerHTML = '';
+      links.forEach(function (link) {
+        var li = document.createElement('li');
+        var a = link.cloneNode(true);
+        a.setAttribute('role', 'menuitem');
+        li.appendChild(a);
+        drawerMenu.appendChild(li);
+      });
+    }
+
+    if (footerMenu) {
+      footerMenu.innerHTML = '';
+      links.forEach(function (link) {
+        var li = document.createElement('li');
+        var a = link.cloneNode(true);
+        li.appendChild(a);
+        footerMenu.appendChild(li);
+      });
+    }
+
+    // Ensure the drawer closes when a link is activated
+    if (drawerMenu) {
+      drawerMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeDrawer);
+      });
+    }
+  }
+
+  populateMenus();
+
   if (navToggle && navDrawer) {
     navToggle.addEventListener('click', function () {
       if (navDrawer.classList.contains('open')) closeDrawer(); else openDrawer();
@@ -242,10 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     navOverlay.addEventListener('click', closeDrawer);
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-
-    navDrawer.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', closeDrawer);
-    });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && navDrawer.classList.contains('open')) {
