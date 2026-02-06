@@ -3,46 +3,82 @@
 ========================= */
 
 :root {
-  /* Bold Color Palette - Vibrant Teal & Coral */
-  --color-primary: #0891B2;
-  --color-primary-dark: #0E7490;
-  --color-primary-light: #22D3EE;
-  --color-accent: #F97316;
-  --color-accent-dark: #EA580C;
-  --color-accent-light: #FB923C;
-  --color-secondary: #F59E0B;
-  --color-secondary-dark: #D97706;
-  --color-secondary-light: #FCD34D;
+  /* ===== Professional Theme ===== */
+  
+  /* Light Theme Colors (from your provided palette) */
+  --bg: #FAF3EB;      /* Off‑White / Ivory (Light Background) */
+  --surface: #F2E6D8; /* Soft Cream (cards / panels) */
+  --text: #5A352C;    /* Deep Brown (primary text/headings) */
+  --muted: #8C6A5A;   /* Muted Taupe (subtext/icons) */
+  --border: #D8A87A;  /* Warm Beige / Nude (borders/dividers) */
+  --accent: #D8A87A;  /* Warm Beige / Nude (links/CTAs) */
+  
+  /* Dark Theme Colors (now same as light to avoid dark background) */
+  --bg-dark: #FAF3EB;
+  --surface-dark: #F2E6D8;
+  --text-dark: #5A352C;
+  --muted-dark: #8C6A5A;
+  --border-dark: #D8A87A;
+  --accent-dark: #D8A87A;
+  
+  /* Legacy color mappings for compatibility */
+  --color-primary: var(--accent);
+  --color-primary-dark: var(--bg-dark);
+  --color-primary-light: var(--accent-dark);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-dark);
+  --color-secondary: var(--muted);
+  --color-secondary-dark: var(--bg-dark);
+  --color-secondary-light: var(--muted-dark);
+  
+  /* Aliases used elsewhere in the stylesheet */
+  --primary: var(--accent);
+  --primary-dark: var(--bg-dark);
+  /* (intentionally not re-aliasing --accent to itself) */
+  --background: var(--bg);
+  --soft-bg: var(--surface);
 
-  /* Rich Neutral Colors */
-  --color-white: #FFFFFF;
-  --color-gray-50: #FEFEFE;
-  --color-gray-100: #F8FAFC;
-  --color-gray-200: #F1F5F9;
-  --color-gray-300: #E2E8F0;
-  --color-gray-400: #94A3B8;
-  --color-gray-500: #64748B;
-  --color-gray-600: #475569;
-  --color-gray-700: #334155;
-  --color-gray-800: #1E293B;
-  --color-gray-900: #0F172A;
-  --color-gray-950: #020617;
+  /* Palette-mapped Neutrals (all from your 5 colors) */
+  --color-white: #FAF3EB;
+  --color-gray-50: #FAF3EB;
+  --color-gray-100: #F2E6D8;
+  --color-gray-200: #F2E6D8;
+  --color-gray-300: #D8A87A;
+  --color-gray-400: #8C6A5A;
+  --color-gray-500: #5A352C;
+  --color-gray-600: #5A352C;
+  --color-gray-700: #5A352C;
+  --color-gray-800: #321B15;
+  --color-gray-900: #321B15;
+  --color-gray-950: #321B15;
 
-  /* Vibrant Semantic Colors */
-  --color-success: #10B981;
-  --color-warning: #F59E0B;
-  --color-error: #EF4444;
-  --color-info: #06B6D4;
+  --neutral-50: #FAF3EB;
+  --neutral-100: #F2E6D8;
+  --neutral-200: #F2E6D8;
+  --neutral-300: #D8A87A;
+  --neutral-400: #8C6A5A;
+  --neutral-500: #5A352C;
+  --neutral-600: #5A352C;
+  --neutral-700: #5A352C;
+  --neutral-800: #321B15;
+  --neutral-900: #321B15;
 
-  /* Bold Gradients */
-  --gradient-primary: linear-gradient(135deg, #0891B2 0%, #06B6D4 50%, #F97316 100%);
-  --gradient-primary-reverse: linear-gradient(135deg, #F97316 0%, #06B6D4 50%, #0891B2 100%);
-  --gradient-accent: linear-gradient(135deg, #F97316 0%, #F59E0B 100%);
-  --gradient-hero: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
-  --gradient-hero-light: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 50%, #F1F5F9 100%);
-  --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
-  --gradient-bold: linear-gradient(90deg, #0891B2, #06B6D4, #F97316, #F59E0B);
-  --gradient-glass: linear-gradient(135deg, rgba(8, 145, 178, 0.15), rgba(8, 145, 178, 0.08));
+  /* Semantic Colors mapped into palette (no extra hues) */
+  --color-success: #8C6A5A;
+  --color-warning: #D8A87A;
+  --color-error: #5A352C;
+  --color-info: #5A352C;
+
+  /* Gradients — aligned to new accent color */
+  --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--bg-dark) 100%);
+  --gradient-primary-reverse: linear-gradient(135deg, var(--bg-dark) 0%, var(--accent) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--muted) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface-dark) 50%, var(--muted) 100%);
+  --gradient-hero-light: linear-gradient(135deg, var(--surface) 0%, var(--bg) 50%, var(--border) 100%);
+  --gradient-card: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+  --gradient-bold: linear-gradient(90deg, var(--accent), var(--muted));
+  --gradient-glass: linear-gradient(135deg, rgba(216, 168, 122, 0.18), rgba(216, 168, 122, 0.08));
 
   /* Enhanced Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -50,9 +86,9 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-glow: 0 0 20px rgba(8, 145, 178, 0.4);
-  --shadow-colored: 0 4px 20px rgba(8, 145, 178, 0.25), 0 2px 8px rgba(8, 145, 178, 0.15);
-  --shadow-colored-dark: 0 4px 20px rgba(8, 145, 178, 0.4), 0 2px 8px rgba(8, 145, 178, 0.25);
+  --shadow-glow: 0 0 20px rgba(216, 168, 122, 0.25);
+  --shadow-colored: 0 4px 20px rgba(216, 168, 122, 0.22), 0 2px 8px rgba(216, 168, 122, 0.14);
+  --shadow-colored-dark: 0 4px 20px rgba(216, 168, 122, 0.32), 0 2px 8px rgba(216, 168, 122, 0.2);
   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04);
 
   /* Enhanced Spacing */
@@ -90,17 +126,17 @@
   --container-max: 1200px;
   --container-padding: 1.5rem;
 
-  /* Bold Glass Effect */
+  /* Glass Effect */
   --glass-bg: rgba(255, 255, 255, 0.25);
-  --glass-border: rgba(8, 145, 178, 0.4);
+  --glass-border: rgba(216, 168, 122, 0.35);
   --glass-backdrop: blur(24px) saturate(180%);
   --glass-bg-fallback: rgba(255, 255, 255, 0.95);
 
   /* Card Backgrounds */
   --card-bg: rgba(255, 255, 255, 0.98);
-  --card-border: rgba(8, 145, 178, 0.15);
-  --card-text: #0F172A;
-  --card-text-muted: #475569;
+  --card-border: rgba(216, 168, 122, 0.18);
+  --card-text: var(--text);
+  --card-text-muted: var(--muted);
 }
 
 /* =========================
@@ -151,49 +187,7 @@
   transform: rotate(15deg);
 }
 
-.dark .theme-toggle {
-  color: var(--color-gray-300);
-}
-
-.dark .theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--color-primary-light);
-}
-
-.icon-sun,
-.icon-moon {
-  line-height: 1;
-}
-
-/* Hide sun in light mode for now, or just swap logic. 
-   Assuming standard toggle behavior: */
-.dark-mode .icon-sun {
-  display: block;
-}
-
-.dark-mode .icon-moon {
-  display: none;
-}
-
-body:not(.dark-mode) .icon-sun {
-  display: none;
-}
-
-body:not(.dark-mode) .icon-moon {
-  display: block;
-}
-
-.dark .site-nav {
-  background: rgba(15, 23, 42, 0.95);
-  border-bottom: 2px solid var(--color-primary);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.dark .site-nav.scrolled {
-  background: rgba(15, 23, 42, 0.98);
-  box-shadow: var(--shadow-2xl);
-}
+/* Dark-mode specific classes removed; theme uses a single light palette */
 
 .nav-inner {
   display: flex;
@@ -230,10 +224,6 @@ body:not(.dark-mode) .icon-moon {
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-}
-
-.dark .nav-brand {
-  color: var(--color-primary-light);
 }
 
 .nav-brand::before {
@@ -495,11 +485,6 @@ body:not(.dark-mode) .icon-moon {
   left: 0;
 }
 
-.dark .nav-drawer {
-  background: var(--gradient-hero);
-  color: var(--color-gray-100);
-}
-
 .drawer-close {
   position: absolute;
   top: var(--space-md);
@@ -567,15 +552,6 @@ body:not(.dark-mode) .icon-moon {
   background: var(--gradient-primary);
   transform: translateX(var(--space-sm));
   box-shadow: var(--shadow-md);
-}
-
-.dark .drawer-menu a {
-  color: var(--color-gray-300);
-}
-
-.dark .drawer-menu a:hover {
-  background: var(--gradient-primary);
-  color: var(--color-white);
 }
 
 /* Bold Nav Overlay */
@@ -1105,7 +1081,7 @@ h1,
 h2,
 h3 {
   font-family: 'Inter', sans-serif;
-  color: #333;
+  color: var(--text);
 }
 
 .btn {
@@ -1338,7 +1314,7 @@ body {
 }
 
 .nav-menu a {
-  color: #1A2517;
+  color: var(--text);
   padding: var(--space-sm) var(--space-md);
   display: inline-block;
   border-radius: var(--radius-md);
@@ -1347,19 +1323,10 @@ body {
   position: relative;
 }
 
-.dark .nav-menu a {
-  color: #ACC8A2;
-}
-
 .nav-menu a:hover {
-  color: #1A2517;
-  background: #ACC8A2;
+  color: var(--text);
+  background: var(--surface);
   text-decoration: none;
-}
-
-.dark .nav-menu a:hover {
-  color: #FFFFFF;
-  background: #1A2517;
 }
 
 /* Collapse menu on small screens */
@@ -2082,89 +2049,29 @@ body {
 ========================= */
 
 :root {
-  /* Custom Color Palette (updated) */
-  --primary: #0f172a;
-  /* Navy - primary */
+  /* Colors/gradients inherited from first :root (single professional palette) */
   --primary-dark: #0b1520;
-  --secondary: #334155;
-  /* Slate - secondary */
-  --accent: #0b5ed7;
-  /* Professional Blue - accent */
-
-  --background: #e7eef7;
-  /* soft neutral for neumorphism */
-  --soft-bg: #eaf4fb;
-
-  --neutral-50: #ffffff;
-  --neutral-100: var(--soft-bg);
-  --neutral-200: #e2eaf2;
-  --neutral-300: #cfdbe6;
-  --neutral-400: #9fb1c6;
-  --neutral-500: #7e9ab3;
-  --neutral-600: #4d6880;
-  --neutral-700: #334155;
-  /* uses user secondary */
-  --neutral-800: #243243;
-  --neutral-900: #122233;
-  /* darker primary */
-
+  --secondary: var(--color-secondary);
   --success: #16a34a;
   --warning: #f59e0b;
   --error: #ef4444;
-
-  /* Legacy tokens mapped to neutral palette */
   --cream: var(--soft-bg);
   --brown: var(--neutral-400);
   --dark-green: var(--neutral-700);
   --light-brown: var(--neutral-300);
   --dark-brown: var(--neutral-800);
-  --pale-cream: var(--soft-bg);
+  /* Ensure the page background follows the main bg token */
+  --pale-cream: var(--bg);
   --warm-gray: var(--neutral-400);
-  --sage: #7A8B7A;
+  --sage: #64748b;
+  --primary-light: var(--color-primary-light);
 
-  /* Glassmorphism Colors (kept for accents) */
-  --glass-bg: rgba(11, 94, 215, 0.04);
-  --glass-border: rgba(11, 94, 215, 0.05);
-  --glass-shadow: rgba(2, 6, 23, 0.04);
-
-  /* Typography */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
-
-  /* Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
   --nav-height: 72px;
-  /* used for fixed site nav spacing */
 
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-  --radius-3xl: 2rem;
-
-  /* Shadows */
-  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.08);
-  --shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.10);
-  --shadow-2xl: 0 60px 120px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 20px rgba(11, 94, 215, 0.08);
-  /* strong soft-dual shadows for neumorphic look */
+  /* Neumorphic shadows */
   --shadow-neumorphic: 18px 18px 36px rgba(163, 177, 198, 0.35), -18px -18px 36px rgba(255, 255, 255, 0.85);
   --shadow-neumorphic-subtle: 8px 8px 18px rgba(160, 172, 188, 0.18), -8px -8px 18px rgba(255, 255, 255, 0.9);
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-  --gradient-hero: linear-gradient(180deg, rgba(248, 250, 252, 0.95), rgba(255, 255, 255, 0.95));
   --gradient-warm: linear-gradient(135deg, var(--cream) 0%, var(--brown) 100%);
   --gradient-cool: linear-gradient(135deg, var(--dark-green) 0%, var(--sage) 100%);
   --gradient-nature: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
@@ -2172,18 +2079,6 @@ body {
   --gradient-sunset: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   --gradient-aurora: linear-gradient(135deg, var(--light-brown) 0%, var(--cream) 100%);
 
-  /* Transitions */
-  --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--primary-light) 100%);
-  --gradient-hero: linear-gradient(180deg, rgba(248, 248, 248, 0.9), rgba(245, 240, 230, 0.95));
-  --gradient-warm: linear-gradient(135deg, var(--cream) 0%, var(--brown) 100%);
-  --gradient-cool: linear-gradient(135deg, var(--dark-green) 0%, var(--sage) 100%);
-  --gradient-nature: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-  --gradient-ocean: linear-gradient(135deg, var(--secondary) 0%, var(--dark-green) 100%);
-  --gradient-sunset: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-  --gradient-aurora: linear-gradient(135deg, var(--light-brown) 0%, var(--cream) 100%);
-
-  /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2659,24 +2554,25 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --neutral-50: #111111;
-    --neutral-100: #222222;
-    --neutral-200: #333333;
-    --neutral-300: #444444;
-    --neutral-400: #666666;
-    --neutral-500: #888888;
-    --neutral-600: #D8D8D8;
-    --neutral-700: #E8E8E8;
-    --neutral-800: #F8F8F8;
-    --neutral-900: #FEFEFE;
+    /* Keep light palette even when OS is in dark mode */
+    --neutral-50: #FAF3EB;
+    --neutral-100: #F2E6D8;
+    --neutral-200: #F2E6D8;
+    --neutral-300: #D8A87A;
+    --neutral-400: #8C6A5A;
+    --neutral-500: #5A352C;
+    --neutral-600: #5A352C;
+    --neutral-700: #5A352C;
+    --neutral-800: #321B15;
+    --neutral-900: #321B15;
 
-    --glass-bg: rgba(133, 97, 40, 0.25);
-    --glass-border: rgba(216, 194, 156, 0.1);
-    --glass-shadow: rgba(0, 0, 0, 0.3);
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(216, 168, 122, 0.35);
+    --glass-shadow: rgba(0, 0, 0, 0.15);
 
-    --shadow-neumorphic: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.05);
+    --shadow-neumorphic: 18px 18px 36px rgba(163, 177, 198, 0.35), -18px -18px 36px rgba(255, 255, 255, 0.85);
 
-    --gradient-hero: linear-gradient(180deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.95));
+    --gradient-hero: linear-gradient(180deg, #FAF3EB, #F2E6D8);
   }
 
   body {
@@ -2763,89 +2659,105 @@ body {
 
 /* Manual Dark Mode Toggle */
 .dark-mode {
-  --neutral-50: #111111;
-  --neutral-100: #222222;
-  --neutral-200: #333333;
-  --neutral-300: #444444;
-  --neutral-400: #666666;
-  --neutral-500: #888888;
-  --neutral-600: #D8D8D8;
-  --neutral-700: #E8E8E8;
-  --neutral-800: #F8F8F8;
-  --neutral-900: #FEFEFE;
-
-  --glass-bg: rgba(133, 97, 40, 0.25);
-  --glass-border: rgba(216, 194, 156, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.3);
-
-  --shadow-neumorphic: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.05);
-
-  --gradient-hero: linear-gradient(180deg, rgba(17, 17, 17, 0.9), rgba(34, 34, 34, 0.95));
+  --bg: var(--bg-dark);
+  --surface: var(--surface-dark);
+  --text: var(--text-dark);
+  --muted: var(--muted-dark);
+  --border: var(--border-dark);
+  --accent: var(--accent-dark);
+  
+  --color-primary: var(--accent-dark);
+  --color-primary-dark: var(--bg-dark);
+  --color-primary-light: var(--accent-dark);
+  --color-accent: var(--accent-dark);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-dark);
+  --color-secondary: var(--muted-dark);
+  --color-secondary-dark: var(--bg-dark);
+  --color-secondary-light: var(--muted-dark);
+  
+  --glass-bg: rgba(15, 23, 42, 0.25);
+  --glass-border: rgba(96, 165, 250, 0.25);
+  --card-bg: rgba(2, 6, 23, 0.95);
+  --card-border: rgba(96, 165, 250, 0.12);
+  --card-text: var(--text-dark);
+  --card-text-muted: var(--muted-dark);
+  
+  --gradient-primary: linear-gradient(135deg, var(--accent-dark) 0%, var(--bg-dark) 100%);
+  --gradient-primary-reverse: linear-gradient(135deg, var(--bg-dark) 0%, var(--accent-dark) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--accent-dark) 0%, var(--muted-dark) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--bg-dark) 0%, var(--surface-dark) 50%, var(--muted-dark) 100%);
+  --gradient-card: linear-gradient(135deg, var(--surface-dark) 0%, var(--bg-dark) 100%);
+  
+  --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.3);
+  --shadow-colored: 0 4px 20px rgba(96, 165, 250, 0.25), 0 2px 8px rgba(96, 165, 250, 0.15);
+  --shadow-colored-dark: 0 4px 20px rgba(96, 165, 250, 0.35), 0 2px 8px rgba(96, 165, 250, 0.25);
 }
 
 .dark-mode body {
-  background-color: var(--neutral-50);
-  color: var(--neutral-700);
+  /* Dark mode now reuses light background to avoid dark UI */
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .dark-mode .site-nav {
-  background: rgba(17, 17, 17, 0.8);
-  border-bottom-color: var(--neutral-200);
+  background: var(--glass-bg);
+  border-bottom-color: var(--border-dark);
 }
 
 .dark-mode .site-nav.scrolled {
-  background: rgba(17, 17, 17, 0.95);
+  background: var(--card-bg);
 }
 
 .dark-mode .nav-menu a {
-  color: var(--neutral-600);
+  color: var(--muted-dark);
 }
 
 .dark-mode .nav-menu a:hover {
-  color: var(--primary-light);
-  background: var(--neutral-100);
+  color: var(--accent-dark);
+  background: var(--surface-dark);
 }
 
 .dark-mode .nav-menu a.active {
-  color: var(--primary-light);
-  background: var(--neutral-100);
+  color: var(--accent-dark);
+  background: var(--surface-dark);
 }
 
 .dark-mode .hero {
-  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--neutral-100) 100%), url('../images/hero-bg.jpg');
-  color: var(--neutral-900);
+  background: var(--gradient-hero);
+  color: var(--text-dark);
 }
 
 .dark-mode .card {
-  background: var(--neutral-100);
-  border-color: var(--neutral-200);
+  background: var(--card-bg);
+  border-color: var(--border-dark);
 }
 
 .dark-mode .card:hover {
-  border-color: var(--primary-light);
+  border-color: var(--accent-dark);
 }
 
 .dark-mode .section-light {
-  background: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
-  border-color: var(--neutral-300);
+  background: linear-gradient(135deg, var(--surface-dark) 0%, var(--bg-dark) 100%);
+  border-color: var(--border-dark);
 }
 
 .dark-mode .publication {
-  background: var(--neutral-100);
-  border-color: var(--neutral-200);
+  background: var(--card-bg);
+  border-color: var(--border-dark);
 }
 
 .dark-mode .cert-list li {
-  background: var(--neutral-100);
-  border-color: var(--neutral-200);
+  background: var(--card-bg);
+  border-color: var(--border-dark);
 }
 
 .dark-mode .timeline-content {
-  background: var(--neutral-100);
+  background: var(--card-bg);
 }
 
 .dark-mode .neumorphic {
-  background: var(--neutral-200);
+  background: var(--surface-dark);
 }
 
 .dark-mode .neumorphic:hover {
@@ -2857,14 +2769,12 @@ body {
 }
 
 .dark-mode .skill-progress {
-  background: var(--neutral-300);
+  background: var(--border-dark);
 }
 
 .dark-mode ::-webkit-scrollbar-track {
-  background: var(--neutral-100);
-}
-
-
+  background: var(--surface-dark);
+};
 
 /* =========================
    LOADING ANIMATIONS
@@ -3013,19 +2923,19 @@ h1,
 h2,
 h3 {
   font-family: 'Inter', sans-serif;
-  color: #333;
+  color: var(--text);
 }
 
 .btn {
   border-radius: 50px;
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--accent);
+  color: var(--text-dark);
   transition: background-color 0.3s;
 }
 
 .btn:hover {
-  background-color: #0056b3;
+  background-color: #8C6A5A;
 }
 
 /* =========================
@@ -3342,6 +3252,7 @@ h3 {
 /* Safari specific fixes */
 @supports (-webkit-backdrop-filter: blur(1px)) {
   .site-nav {
+    backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
   }
 }

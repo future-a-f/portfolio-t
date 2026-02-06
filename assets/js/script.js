@@ -1,45 +1,12 @@
 /* Basic site JS helpers
  * - Smooth scroll fallback for same-page anchors
  * - Skip-link focus handling for accessibility
- * - Dark mode toggle functionality
- * - Navigation functionality
+ * - Navigation functionality (drawer, active link, back-to-top)
+ * - Accessible project image lightbox
  */
-
-// Dark mode functionality
-function initDarkMode() {
-  const themeToggle = document.querySelector('.theme-toggle');
-  const body = document.body;
-
-  // Check for saved theme preference or default to light mode
-  const currentTheme = localStorage.getItem('theme') || 'light';
-  if (currentTheme === 'dark') {
-    body.classList.add('dark-mode');
-    body.classList.add('dark');
-  }
-
-  // Theme toggle functionality
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('dark');
-      const isDarkMode = body.classList.contains('dark-mode');
-
-      // Save preference
-      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-
-      // Add transition effect
-      body.style.transition = 'all 0.3s ease';
-      setTimeout(() => {
-        body.style.transition = '';
-      }, 300);
-    });
-  }
-}
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function () {
-  // Initialize all features
-  initDarkMode();
 
   // Smooth scroll for same-page anchors (fallback for older browsers)
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -84,7 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var navOverlay = document.querySelector('.nav-overlay');
   var drawerClose = navDrawer ? navDrawer.querySelector('.drawer-close') : null;
 
+  // Focusable elements selector for focus trap
+  var focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+  var lastFocusedBeforeDrawer = null;
+
   function openDrawer() {
+    lastFocusedBeforeDrawer = document.activeElement;
     navDrawer.classList.add('open');
     navOverlay.classList.add('open');
     navToggle.classList.add('open');
@@ -101,7 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
     navToggle.setAttribute('aria-expanded', 'false');
     navDrawer.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    navToggle.focus();
+    if (lastFocusedBeforeDrawer && typeof lastFocusedBeforeDrawer.focus === 'function') {
+      lastFocusedBeforeDrawer.focus();
+    } else {
+      navToggle.focus();
+    }
   }
 
   // Populate mobile drawer and footer quick-links from the single source (#nav-menu)
@@ -152,8 +128,30 @@ document.addEventListener('DOMContentLoaded', function () {
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && navDrawer.classList.contains('open')) {
+      if (!navDrawer.classList.contains('open')) return;
+
+      if (e.key === 'Escape') {
         closeDrawer();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        var focusable = navDrawer.querySelectorAll(focusableSelector);
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     });
   }
@@ -244,12 +242,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var lbImg = lb.querySelector('img');
     var lbCaption = lb.querySelector('.lb-caption');
     var lbClose = lb.querySelector('.lb-close');
+    var lastTrigger = null;
 
     projectLinks.forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
         var href = this.getAttribute('href');
         var caption = this.querySelector('.project-meta h3') ? this.querySelector('.project-meta h3').textContent : '';
+        lastTrigger = this;
         lbImg.src = href;
         lbCaption.innerHTML = '<strong>' + caption + '</strong>';
         lb.classList.add('open');
@@ -263,6 +263,9 @@ document.addEventListener('DOMContentLoaded', function () {
       lb.classList.remove('open');
       lb.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
+      if (lastTrigger && typeof lastTrigger.focus === 'function') {
+        lastTrigger.focus();
+      }
     }
 
     lb.addEventListener('click', function (e) {
