@@ -18,9 +18,11 @@
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <meta name="description" content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination.">
+    <meta name="description"
+        content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination.">
     <meta property="og:title" content="Tabitha Musyoki — Administrative & Project Management" />
-    <meta property="og:description" content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination." />
+    <meta property="og:description"
+        content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://example.com/" />
     <meta property="og:image" content="assets/images/og-image.svg" />
@@ -33,327 +35,444 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-nav" id="navbar">
-      <div class="container nav-inner">
-        <a href="#home" class="nav-brand" aria-label="Home">
-          <img src="assets/images/logo.svg" alt="Tabitha Musyoki" width="40" height="40">
-        </a>
+        <div class="container nav-inner">
+            <a href="#home" class="nav-brand" aria-label="Home">
+                <img src="assets/images/logo.svg" alt="Tabitha Musyoki" width="40" height="40">
+            </a>
 
-        <ul id="nav-menu" class="nav-menu nav-center" role="menubar" aria-label="Primary">
-          <li role="none"><a role="menuitem" href="#home">Home</a></li>
-          <li role="none"><a role="menuitem" href="#about">About</a></li>
-          <li role="none"><a role="menuitem" href="#practice">Practice</a></li>
-          <li role="none"><a role="menuitem" href="#experience">Experience</a></li>
-          <li role="none"><a role="menuitem" href="#research">Research</a></li>
-          <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
-          <li role="none"><a role="menuitem" href="#certifications">Certifications</a></li>
-        </ul>
+            <ul id="nav-menu" class="nav-menu nav-center" role="menubar" aria-label="Primary">
+                <li role="none"><a role="menuitem" href="#home">Home</a></li>
+                <li role="none"><a role="menuitem" href="#about">About</a></li>
+                <li role="none"><a role="menuitem" href="#practice">Practice</a></li>
+                <li role="none"><a role="menuitem" href="#experience">Experience</a></li>
+                <li role="none"><a role="menuitem" href="#research">Research</a></li>
+                <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
+                <li role="none"><a role="menuitem" href="#certifications">Certifications</a></li>
+            </ul>
 
-        <div class="nav-right">
-          <a href="#contact" class="nav-cta btn-primary">Contact</a>
-
-          <button class="nav-toggle" aria-controls="nav-drawer" aria-expanded="false" aria-label="Open menu">
-            <span class="hamburger" aria-hidden="true"></span>
-          </button>
+            <div class="nav-right">
+                <a href="#contact" class="nav-cta btn-primary">Contact</a>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
         </div>
-      </div>
 
-      <!-- Off-canvas mobile drawer (menu items generated from desktop nav) -->
-      <div id="nav-drawer" class="nav-drawer" aria-hidden="true" aria-label="Mobile menu">
-        <button class="drawer-close" aria-label="Close menu">×</button>
-        <nav aria-label="Mobile primary">
-          <ul id="drawer-menu" class="drawer-menu" role="menubar" aria-label="Mobile menu">
-            <!-- Populated by script.js from #nav-menu to avoid duplicated markup -->
-          </ul>
-        </nav>
-      </div>
-
-      <div class="nav-overlay" tabindex="-1" aria-hidden="true"></div>
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="nav-drawer" id="nav-drawer">
+        <button class="drawer-close" id="drawer-close" aria-label="Close navigation">×</button>
+        <ul class="drawer-menu" role="menubar" aria-label="Mobile navigation">
+            <li><a href="#home" role="menuitem">Home</a></li>
+            <li><a href="#about" role="menuitem">About</a></li>
+            <li><a href="#practice" role="menuitem">Practice</a></li>
+            <li><a href="#experience" role="menuitem">Experience</a></li>
+            <li><a href="#research" role="menuitem">Research</a></li>
+            <li><a href="#skills" role="menuitem">Skills</a></li>
+            <li><a href="#certifications" role="menuitem">Certifications</a></li>
+            <li><a href="#contact" role="menuitem">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <!-- Hero / Identity -->
     <header id="home" class="hero">
-      <div class="hero-card container">
-        <div class="hero-content">
-          <h1>Administrative, Project & Operations Management Professional</h1>
-          <p class="hero-subtitle">
-            Supporting executive leadership, projects, and institutional operations through
-            structured administration, analytical thinking, and efficient coordination.
-          </p>
+        <div class="hero-card container">
+            <div class="hero-content">
+                <h1>Administrative, Project & Operations Management Professional</h1>
+                <p class="hero-subtitle">
+                    Supporting executive leadership, projects, and institutional operations through
+                    structured administration, analytical thinking, and efficient coordination.
+                </p>
 
-          <p class="hero-tag">Project &amp; Operations Manager • Nairobi • Open to remote roles</p>
+                <p class="hero-tag">Project &amp; Operations Manager • Nairobi • Open to remote roles</p>
 
-          <p class="hero-intro">
-            I am a results-driven administrative and project management professional with a strong academic
-            foundation in <strong>Project Management, Economics, and Sociology</strong>, and over
-            <strong>five years of experience</strong> supporting executive leadership, institutional operations,
-            and compliance-driven environments.
-          </p>
+                <p class="hero-intro">
+                    I am a results-driven administrative and project management professional with a strong academic
+                    foundation in <strong>Project Management, Economics, and Sociology</strong>, and over
+                    <strong>five years of experience</strong> supporting executive leadership, institutional operations,
+                    and compliance-driven environments.
+                </p>
 
-          <div class="hero-actions">
-            <a href="#contact" class="btn-primary">Contact Me</a>
-            <a href="documents/Tabitha-Wayua-Musyoki-CV.pdf" class="btn-secondary" download>
-              Download CV
-            </a>
-          </div>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Contact Me</a>
+                    <a href="documents/Tabitha-Wayua-Musyoki-CV.pdf" class="btn-secondary" download>
+                        Download CV
+                    </a>
+                </div>
+            </div>
+
+            <figure class="hero-media">
+                <img src="assets/images/me.jpeg" alt="Tabitha Musyoki — professional portrait" class="hero-portrait"
+                    loading="lazy" width="340" height="340">
+            </figure>
         </div>
-
-        <figure class="hero-media">
-          <img src="assets/images/me.jpeg" alt="Tabitha Musyoki — professional portrait" class="hero-portrait" loading="lazy" width="340" height="340">
-        </figure>
-      </div>
     </header>
 
     <main id="main">
-    <!-- About / Profile -->
-    <section id="about" class="section reveal">
-        <div class="container">
-            <h2>Professional Profile</h2>
+        <!-- About / Profile -->
+        <section id="about" class="section reveal">
+            <div class="container">
+                <h2>Professional Profile</h2>
 
-            <p>
-                I am an experienced administrative and project support professional
-                with a
-                <strong>Master of Business Administration in Project Management</strong>
-                and a <strong>Bachelor’s degree in Economics and Sociology</strong>.
-                My academic training has equipped me with strong analytical,
-                organizational, and planning capabilities, while my professional
-                experience has strengthened my ability to operate in structured,
-                high-responsibility environments.
-            </p>
-
-            <p>
-                My education in project management provides a solid understanding of
-                planning, coordination, monitoring, and performance evaluation. My
-                background in economics and sociology enables me to understand
-                organizational systems, stakeholder dynamics, and institutional
-                behavior.
-            </p>
-
-            <p>
-                I am detail-oriented, adaptable, and trusted with sensitive
-                information. I thrive in environments that require accountability,
-                discretion, and professionalism, particularly in roles supporting
-                leadership, projects, and organizational processes.
-            </p>
-        </div>
-    </section>
-
-    <!-- Areas of Professional Practice -->
-    <section id="practice" class="section section-light reveal">
-        <div class="container">
-            <h2>Areas of Professional Practice</h2>
-
-            <div class="grid-3">
-                <div class="card reveal">
-                    <h3>Administrative & Executive Management</h3>
-                    <p>
-                        Structured executive support including calendar management,
-                        official correspondence, meeting coordination, professional
-                        documentation, and confidential information handling.
-                    </p>
-                </div>
-
-                <div class="card reveal">
-                    <h3>Project Coordination & Support</h3>
-                    <p>
-                        Supporting project planning, coordination, monitoring, and
-                        reporting to ensure organized workflows, timely delivery, and
-                        effective stakeholder engagement.
-                    </p>
-                </div>
-
-                <div class="card reveal">
-                    <h3>Operations & Office Management</h3>
-                    <p>
-                        Streamlining institutional operations through workflow
-                        organization, records management, and administrative systems that
-                        support efficiency and compliance.
-                    </p>
-                </div>
-
-                <div class="card reveal">
-                    <h3>Research, Reporting & Data Support</h3>
-                    <p>
-                        Preparation of analytical reports, briefs, presentations, and
-                        research materials to support evidence-based decision-making.
-                    </p>
-                </div>
-
-                <div class="card reveal">
-                    <h3>Compliance, Records & Documentation</h3>
-                    <p>
-                        Management of confidential records, registries, and compliance
-                        documentation in line with institutional and regulatory standards.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section reveal">
-        <div class="container">
-            <h2>Professional Experience</h2>
-
-            <p>
-                I have extensive experience supporting executive leadership, project
-                teams, and institutional operations within structured and
-                compliance-driven environments.
-            </p>
-
-            <ul class="experience-list">
-                <li>
-                    Provided executive and administrative support within government
-                    institutions, including documentation, reporting, and confidential
-                    record management.
-                </li>
-                <li>
-                    Supported project coordination and operational workflows through
-                    reporting, scheduling, and stakeholder communication.
-                </li>
-                <li>
-                    Collaborated with international and remote teams using digital
-                    workflow tools to support recruitment tracking, reporting, and
-                    project coordination.
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Academic & Research -->
-    <section id="research" class="section section-light reveal">
-        <div class="container">
-            <h2>Academic & Research Work</h2>
-
-            <p>
-                I am a published co-author in the
-                <strong>International Journal of Social Science and Humanities
-                    Research</strong>, with research focused on project performance within public-sector
-                funded initiatives.
-            </p>
-
-            <div class="publication reveal">
-                <h3>Effect of Physical Resource Capability on Project Performance</h3>
                 <p>
-                    This research examined the relationship between resource capability
-                    and performance in government-funded infrastructure projects,
-                    reinforcing my analytical orientation and evidence-based approach to
-                    management and operations.
+                    I am an experienced administrative and project support professional
+                    with a
+                    <strong>Master of Business Administration in Project Management</strong>
+                    and a <strong>Bachelor's degree in Economics and Sociology</strong>.
+                    My academic training has equipped me with strong analytical,
+                    organizational, and planning capabilities, while my professional
+                    experience has strengthened my ability to operate in structured,
+                    high-responsibility environments.
                 </p>
-                <a href="https://doi.org/10.5281/zenodo.10731696" target="_blank" rel="noopener noreferrer">
-                    View Publication (DOI)
-                </a>
+
+                <p>
+                    My education in project management provides a solid understanding of
+                    planning, coordination, monitoring, and performance evaluation. My
+                    background in economics and sociology enables me to understand
+                    organizational systems, stakeholder dynamics, and institutional
+                    behavior.
+                </p>
+
+                <p>
+                    I am detail-oriented, adaptable, and trusted with sensitive
+                    information. I thrive in environments that require accountability,
+                    discretion, and professionalism, particularly in roles supporting
+                    leadership, projects, and organizational processes.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section reveal">
-        <div class="container">
-            <h2>Skills & Competencies</h2>
+        <!-- Areas of Professional Practice -->
+        <section id="practice" class="section section-light reveal">
+            <div class="container">
+                <h2>Areas of Professional Practice</h2>
 
-            <div class="grid-2">
-                <ul>
-                    <li>Project coordination, monitoring & reporting</li>
-                    <li>Administrative & executive support</li>
-                    <li>Workflow and operations management</li>
-                    <li>Confidential documentation handling</li>
+                <div class="grid-3">
+                    <div class="card reveal">
+                        <h3>Administrative & Executive Management</h3>
+                        <p>
+                            Structured executive support including calendar management,
+                            official correspondence, meeting coordination, professional
+                            documentation, and confidential information handling.
+                        </p>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3>Project Coordination & Support</h3>
+                        <p>
+                            Supporting project planning, coordination, monitoring, and
+                            reporting to ensure organized workflows, timely delivery, and
+                            effective stakeholder engagement.
+                        </p>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3>Operations & Office Management</h3>
+                        <p>
+                            Streamlining institutional operations through workflow
+                            organization, records management, and administrative systems that
+                            support efficiency and compliance.
+                        </p>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3>Research, Reporting & Data Support</h3>
+                        <p>
+                            Preparation of analytical reports, briefs, presentations, and
+                            research materials to support evidence-based decision-making.
+                        </p>
+                    </div>
+
+                    <div class="card reveal">
+                        <h3>Compliance, Records & Documentation</h3>
+                        <p>
+                            Management of confidential records, registries, and compliance
+                            documentation in line with institutional and regulatory standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience" class="section reveal">
+            <div class="container">
+                <h2>Professional Experience</h2>
+
+                <p>
+                    I have extensive experience supporting executive leadership, project
+                    teams, and institutional operations within structured and
+                    compliance-driven environments.
+                </p>
+
+                <ul class="experience-list">
+                    <li>
+                        Provided executive and administrative support within government
+                        institutions, including documentation, reporting, and confidential
+                        record management.
+                    </li>
+                    <li>
+                        Supported project coordination and operational workflows through
+                        reporting, scheduling, and stakeholder communication.
+                    </li>
+                    <li>
+                        Collaborated with international and remote teams using digital
+                        workflow tools to support recruitment tracking, reporting, and
+                        project coordination.
+                    </li>
                 </ul>
+            </div>
+        </section>
 
-                <ul>
-                    <li>Research & data organization</li>
-                    <li>Microsoft Office Suite</li>
-                    <li>Asana, Trello</li>
-                    <li>Canva & digital documentation systems</li>
+        <!-- Academic & Research -->
+        <section id="research" class="section section-light reveal">
+            <div class="container">
+                <h2>Academic & Research Work</h2>
+
+                <p>
+                    I am a published co-author in the
+                    <strong>International Journal of Social Science and Humanities
+                        Research</strong>, with research focused on project performance within public-sector
+                    funded initiatives.
+                </p>
+
+                <div class="publication reveal">
+                    <h3>Effect of Physical Resource Capability on Project Performance</h3>
+                    <p>
+                        This research examined the relationship between resource capability
+                        and performance in government-funded infrastructure projects,
+                        reinforcing my analytical orientation and evidence-based approach to
+                        management and operations.
+                    </p>
+                    <a href="https://doi.org/10.5281/zenodo.10731696" target="_blank" rel="noopener noreferrer">
+                        View Publication (DOI)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="section reveal">
+            <div class="container">
+                <h2>Skills & Competencies</h2>
+
+                <div class="grid-2">
+                    <ul>
+                        <li>Project coordination, monitoring & reporting</li>
+                        <li>Administrative & executive support</li>
+                        <li>Workflow and operations management</li>
+                        <li>Confidential documentation handling</li>
+                    </ul>
+
+                    <ul>
+                        <li>Research & data organization</li>
+                        <li>Microsoft Office Suite</li>
+                        <li>Asana, Trello</li>
+                        <li>Canva & digital documentation systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="section section-light reveal">
+            <div class="container">
+                <h2>Certifications & Professional Development</h2>
+
+                <ul class="cert-list">
+                    <li>Virtual Assistance Certification - ALX Africa</li>
+                    <li>AI Career Essentials - ALX Africa</li>
+                    <li>Asana Workflow Specialist</li>
+                    <li>CBRE Project Management Job Simulation - Forage</li>
+                    <li>ICT Certification - Kenya Red Cross Society / DOT</li>
                 </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="section section-light reveal">
-        <div class="container">
-            <h2>Certifications & Professional Development</h2>
+        <section id="projects" class="section section-light reveal">
+            <div class="container">
+                <h2>Selected Projects</h2>
+                <p class="section-lead">A selection of work, process templates, and reporting products that showcase
+                    process-driven improvements.</p>
 
-            <ul class="cert-list">
-                <li>Virtual Assistance Certification – ALX Africa</li>
-                <li>AI Career Essentials – ALX Africa</li>
-                <li>Asana Workflow Specialist</li>
-                <li>CBRE Project Management Job Simulation – Forage</li>
-                <li>ICT Certification – Kenya Red Cross Society / DOT</li>
-            </ul>
-        </div>
-    </section>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <a href="assets/images/experience-bg.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/experience-bg.jpg" alt="Project thumbnail — dashboard"
+                                loading="lazy">
+                            <div class="project-meta">
+                                <h3>Operational Dashboard</h3>
+                                <p>Reporting templates and workflow analytics.</p>
+                            </div>
+                        </a>
+                    </article>
 
-    <section id="projects" class="section section-light reveal">
-        <div class="container">
-            <h2>Selected Projects</h2>
-            <p class="section-lead">A selection of work, process templates, and reporting products that showcase process-driven improvements.</p>
+                    <article class="project-card">
+                        <a href="assets/images/about-bg.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/about-bg.jpg" alt="Project thumbnail — process" loading="lazy">
+                            <div class="project-meta">
+                                <h3>Process Documentation</h3>
+                                <p>Standard operating procedures and records management.</p>
+                            </div>
+                        </a>
+                    </article>
 
-            <div class="project-grid">
-                <article class="project-card">
-                    <a href="assets/images/experience-bg.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/images/experience-bg.jpg" alt="Project thumbnail — dashboard" loading="lazy">
-                        <div class="project-meta">
-                            <h3>Operational Dashboard</h3>
-                            <p>Reporting templates and workflow analytics.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="assets/images/about-bg.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/images/about-bg.jpg" alt="Project thumbnail — process" loading="lazy">
-                        <div class="project-meta">
-                            <h3>Process Documentation</h3>
-                            <p>Standard operating procedures and records management.</p>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <a href="assets/images/hero-bg.jpg" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/images/hero-bg.jpg" alt="Project thumbnail — communications" loading="lazy">
-                        <div class="project-meta">
-                            <h3>Stakeholder Communications</h3>
-                            <p>Templates and presentation support for stakeholder engagement.</p>
-                        </div>
-                    </a>
-                </article>
+                    <article class="project-card">
+                        <a href="assets/images/hero-bg.jpg" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/hero-bg.jpg" alt="Project thumbnail — communications"
+                                loading="lazy">
+                            <div class="project-meta">
+                                <h3>Stakeholder Communications</h3>
+                                <p>Templates and presentation support for stakeholder engagement.</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     </main>
 
     <!-- Contact -->
-    <footer id="contact" class="footer">
-      <div class="container footer-grid">
-        <div class="footer-col contact-col">
-          <h2>Contact</h2>
-          <p>Open to professional opportunities within administrative management, project support, operations, and program coordination.</p>
-          <ul class="contact-details">
-            <li><strong>Location:</strong> Nairobi, Kenya</li>
-            <li><strong>Availability:</strong> Open to remote and global roles</li>
-            <li><strong>Email:</strong> <a href="mailto:musyokitabitha@gmail.com">musyokitabitha@gmail.com</a></li>
-          </ul>
+    <section id="contact" class="section section-light reveal">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Let's collaborate on your next project. I'm always open to discussing new opportunities and challenges.</p>
+            
+            <div class="contact-form">
+                <form class="form-grid" action="mailto:musyokitabitha@gmail.com" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <select id="subject" name="subject" class="form-select">
+                            <option value="">Select a topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="project">Project Collaboration</option>
+                            <option value="opportunity">Career Opportunity</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="form-submit">
+                            <span class="submit-text">Send Message</span>
+                            <span class="submit-icon">→</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="icon-envelope">✉</span>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:musyokitabitha@gmail.com" class="email-link">musyokitabitha@gmail.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="icon-phone">📱</span>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+254 712 3456</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="icon-location">📍</span>
+                    </div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>Nairobi, Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <span class="icon-clock">🕐</span>
+                    </div>
+                    <div class="info-content">
+                        <h3>Availability</h3>
+                        <p>Open to remote and global roles</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer-col links-col" aria-label="Quick links">
-          <h3>Quick links</h3>
-          <ul id="footer-links" class="footer-links" role="menubar" aria-label="Footer navigation">
-            <!-- Populated by script.js from #nav-menu to avoid duplicated markup -->
-          </ul>
-        </div>
+    <!-- Modern Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Tabitha Musyoki</h3>
+                <p>Administrative & Project Management Professional</p>
+                <p>Specializing in executive support, project coordination, and operations management with a focus on efficiency and excellence.</p>
+                
+                <div class="footer-social">
+                    <h4>Connect With Me</h4>
+                    <ul class="social-list">
+                        <li><a href="https://linkedin.com/in/tabitha-musyoki" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <span class="social-icon">in</span>
+                        </a></li>
+                        <li><a href="mailto:musyokitabitha@gmail.com" rel="noopener noreferrer" aria-label="Email">
+                            <span class="social-icon">✉</span>
+                        </a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <span class="social-icon">𝕏</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <div class="footer-col social-col">
-          <h3>Connect</h3>
-          <ul class="social-list">
-            <li><a href="https://linkedin.com/in/tabitha-musyoki" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
-            <li><a href="mailto:musyokitabitha@gmail.com" rel="noopener noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a></li>
-          </ul>
-          <p class="copyright">&copy; 2026 Tabitha Musyoki. All rights reserved.</p>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul id="footer-links" class="footer-links" role="menubar" aria-label="Footer navigation">
+                    <!-- Populated by script.js from #nav-menu to avoid duplicated markup -->
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-services">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#practice">Professional Practice</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#research">Research Work</a></li>
+                    <li><a href="#skills">Skills & Certifications</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">&copy; 2026 Tabitha Musyoki. All rights reserved.</p>
+                <p class="footer-tagline">Excellence in Administrative & Project Management</p>
+            </div>
+        </div>
     </footer>
 
     <button class="back-to-top" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button>
