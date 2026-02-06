@@ -9,22 +9,24 @@
 function initDarkMode() {
   const themeToggle = document.querySelector('.theme-toggle');
   const body = document.body;
-  
+
   // Check for saved theme preference or default to light mode
   const currentTheme = localStorage.getItem('theme') || 'light';
   if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
+    body.classList.add('dark');
   }
-  
+
   // Theme toggle functionality
   if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
+    themeToggle.addEventListener('click', function () {
       body.classList.toggle('dark-mode');
+      body.classList.toggle('dark');
       const isDarkMode = body.classList.contains('dark-mode');
-      
+
       // Save preference
       localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-      
+
       // Add transition effect
       body.style.transition = 'all 0.3s ease';
       setTimeout(() => {
@@ -38,7 +40,7 @@ function initDarkMode() {
 document.addEventListener('DOMContentLoaded', function () {
   // Initialize all features
   initDarkMode();
-  
+
   // Smooth scroll for same-page anchors (fallback for older browsers)
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = 'hidden';
     if (drawerClose) drawerClose.focus();
   }
-  
+
   function closeDrawer() {
     navDrawer.classList.remove('open');
     navOverlay.classList.remove('open');
@@ -224,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var link = document.querySelector('.nav-menu a[href="#' + id + '"]');
         if (entry.isIntersecting) {
           navLinks.forEach(function (l) { l.classList.remove('active'); l.removeAttribute('aria-current'); });
-          if (link) { link.classList.add('active'); link.setAttribute('aria-current','page'); }
+          if (link) { link.classList.add('active'); link.setAttribute('aria-current', 'page'); }
         }
       });
     }, { threshold: 0.52 });
@@ -236,22 +238,22 @@ document.addEventListener('DOMContentLoaded', function () {
   if (projectLinks.length) {
     var lb = document.createElement('div');
     lb.className = 'lightbox';
-    lb.setAttribute('aria-hidden','true');
+    lb.setAttribute('aria-hidden', 'true');
     lb.innerHTML = '<div class="lb-inner" role="dialog" aria-label="Image viewer"><button class="lb-close" aria-label="Close">×</button><img alt=""><div class="lb-caption"></div></div>';
     document.body.appendChild(lb);
     var lbImg = lb.querySelector('img');
     var lbCaption = lb.querySelector('.lb-caption');
     var lbClose = lb.querySelector('.lb-close');
 
-    projectLinks.forEach(function(link) {
-      link.addEventListener('click', function(e) {
+    projectLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
         var href = this.getAttribute('href');
         var caption = this.querySelector('.project-meta h3') ? this.querySelector('.project-meta h3').textContent : '';
         lbImg.src = href;
         lbCaption.innerHTML = '<strong>' + caption + '</strong>';
         lb.classList.add('open');
-        lb.setAttribute('aria-hidden','false');
+        lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         lbClose.focus();
       });
@@ -259,14 +261,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function closeLB() {
       lb.classList.remove('open');
-      lb.setAttribute('aria-hidden','true');
+      lb.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
-    lb.addEventListener('click', function(e) {
+    lb.addEventListener('click', function (e) {
       if (e.target === lb || e.target === lbClose) closeLB();
     });
-    document.addEventListener('keydown', function(e){
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && lb.classList.contains('open')) closeLB();
     });
   }
