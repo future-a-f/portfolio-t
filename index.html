@@ -1,478 +1,455 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Preconnect for fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-
-    <!-- Favicon & manifest -->
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="site.webmanifest" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabitha Musyoki | Project Management & Virtual Assistant</title>
     <meta name="description"
-        content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination.">
-    <meta property="og:title" content="Tabitha Musyoki — Administrative & Project Management" />
-    <meta property="og:description"
-        content="Administrative, project, and operations management professional supporting executive leadership, institutional operations, and project coordination." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://example.com/" />
-    <meta property="og:image" content="assets/images/og-image.svg" />
-    <meta name="twitter:card" content="summary_large_image" />
+        content="Modern portfolio showcasing Tabitha Musyoki's expertise in project management, executive support, virtual assistance, and AI integration. Open to opportunities across administrative, project coordination, and tech-enabled roles.">
 
-    <title>Tabitha Musyoki - Administrative & Project Management</title>
+    <!-- Preloader Styles (Inline for immediate render) -->
+    <style>
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #6366f1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- SEO Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Tabitha Wayua Musyoki",
+      "jobTitle": "Project Management Associate",
+      "worksFor": [
+        { "@type": "Organization", "name": "Kenya Prisons Service" },
+        { "@type": "Organization", "name": "Excelerate" }
+      ],
+      "url": "https://tabithamusyoki.com",
+      "sameAs": [
+        "https://linkedin.com/in/tabitha-musyoki"
+      ],
+      "description": "Project Management Associate and Virtual Assistant specializing in AI integration and executive support."
+    }
+    </script>
 </head>
 
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-nav" id="navbar">
-        <div class="container nav-inner">
-            <a href="#home" class="nav-brand" aria-label="Home">
-                <img src="assets/images/logo.svg" alt="Tabitha Musyoki" width="40" height="40">
-            </a>
-
-            <ul id="nav-menu" class="nav-menu nav-center" role="menubar" aria-label="Primary">
-                <li role="none"><a role="menuitem" href="#home">Home</a></li>
-                <li role="none"><a role="menuitem" href="#about">About</a></li>
-                <li role="none"><a role="menuitem" href="#practice">Practice</a></li>
-                <li role="none"><a role="menuitem" href="#experience">Experience</a></li>
-                <li role="none"><a role="menuitem" href="#research">Research</a></li>
-                <li role="none"><a role="menuitem" href="#skills">Skills</a></li>
-                <li role="none"><a role="menuitem" href="#certifications">Certifications</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <a href="#contact" class="nav-cta btn-primary">Contact</a>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="hamburger"></span>
-                </button>
-            </div>
-        </div>
-
-    </header>
-
-    <!-- Mobile Navigation Drawer -->
-    <div class="nav-drawer" id="nav-drawer" role="dialog" aria-modal="true" aria-hidden="true">
-        <button class="drawer-close" id="drawer-close" aria-label="Close navigation">×</button>
-        <ul class="drawer-menu" role="menubar" aria-label="Mobile navigation">
-            <li><a href="#home" role="menuitem">Home</a></li>
-            <li><a href="#about" role="menuitem">About</a></li>
-            <li><a href="#practice" role="menuitem">Practice</a></li>
-            <li><a href="#experience" role="menuitem">Experience</a></li>
-            <li><a href="#research" role="menuitem">Research</a></li>
-            <li><a href="#skills" role="menuitem">Skills</a></li>
-            <li><a href="#certifications" role="menuitem">Certifications</a></li>
-            <li><a href="#contact" role="menuitem">Contact</a></li>
-        </ul>
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="spinner"></div>
     </div>
 
-    <!-- Navigation Overlay -->
-    <div class="nav-overlay" id="nav-overlay"></div>
-
-    <!-- Hero / Identity -->
-    <header id="home" class="hero">
-        <div class="hero-card container">
-            <div class="hero-content">
-                <h1>Administrative, Project & Operations Management Professional</h1>
-                <p class="hero-subtitle">
-                    Supporting executive leadership, projects, and institutional operations through
-                    structured administration, analytical thinking, and efficient coordination.
-                </p>
-
-                <p class="hero-tag">Project &amp; Operations Manager • Nairobi • Open to remote roles</p>
-
-                <p class="hero-intro">
-                    I am a results-driven administrative and project management professional with a strong academic
-                    foundation in <strong>Project Management, Economics, and Sociology</strong>, and over
-                    <strong>five years of experience</strong> supporting executive leadership, institutional operations,
-                    and compliance-driven environments.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-primary">Contact Me</a>
-                    <a href="documents/Tabitha-Wayua-Musyoki-CV.pdf" class="btn-secondary" download>
-                        Download CV
-                    </a>
-                </div>
-            </div>
-
-            <figure class="hero-media">
-                <img src="assets/images/me.jpeg" alt="Tabitha Musyoki — professional portrait" class="hero-portrait"
-                    loading="lazy" width="340" height="340">
-            </figure>
-        </div>
-    </header>
-
-    <main id="main">
-        <!-- About / Profile -->
-        <section id="about" class="section reveal">
-            <div class="container">
-                <h2>Professional Profile</h2>
-
-                <p>
-                    I am an experienced administrative and project support professional
-                    with a
-                    <strong>Master of Business Administration in Project Management</strong>
-                    and a <strong>Bachelor's degree in Economics and Sociology</strong>.
-                    My academic training has equipped me with strong analytical,
-                    organizational, and planning capabilities, while my professional
-                    experience has strengthened my ability to operate in structured,
-                    high-responsibility environments.
-                </p>
-
-                <p>
-                    My education in project management provides a solid understanding of
-                    planning, coordination, monitoring, and performance evaluation. My
-                    background in economics and sociology enables me to understand
-                    organizational systems, stakeholder dynamics, and institutional
-                    behavior.
-                </p>
-
-                <p>
-                    I am detail-oriented, adaptable, and trusted with sensitive
-                    information. I thrive in environments that require accountability,
-                    discretion, and professionalism, particularly in roles supporting
-                    leadership, projects, and organizational processes.
-                </p>
-            </div>
-        </section>
-
-        <!-- Areas of Professional Practice -->
-        <section id="practice" class="section section-light reveal">
-            <div class="container">
-                <h2>Areas of Professional Practice</h2>
-
-                <div class="grid-3">
-                    <div class="card reveal">
-                        <h3>Administrative & Executive Management</h3>
-                        <p>
-                            Structured executive support including calendar management,
-                            official correspondence, meeting coordination, professional
-                            documentation, and confidential information handling.
-                        </p>
-                    </div>
-
-                    <div class="card reveal">
-                        <h3>Project Coordination & Support</h3>
-                        <p>
-                            Supporting project planning, coordination, monitoring, and
-                            reporting to ensure organized workflows, timely delivery, and
-                            effective stakeholder engagement.
-                        </p>
-                    </div>
-
-                    <div class="card reveal">
-                        <h3>Operations & Office Management</h3>
-                        <p>
-                            Streamlining institutional operations through workflow
-                            organization, records management, and administrative systems that
-                            support efficiency and compliance.
-                        </p>
-                    </div>
-
-                    <div class="card reveal">
-                        <h3>Research, Reporting & Data Support</h3>
-                        <p>
-                            Preparation of analytical reports, briefs, presentations, and
-                            research materials to support evidence-based decision-making.
-                        </p>
-                    </div>
-
-                    <div class="card reveal">
-                        <h3>Compliance, Records & Documentation</h3>
-                        <p>
-                            Management of confidential records, registries, and compliance
-                            documentation in line with institutional and regulatory standards.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section id="experience" class="section reveal">
-            <div class="container">
-                <h2>Professional Experience</h2>
-
-                <p>
-                    I have extensive experience supporting executive leadership, project
-                    teams, and institutional operations within structured and
-                    compliance-driven environments.
-                </p>
-
-                <ul class="experience-list">
-                    <li>
-                        Provided executive and administrative support within government
-                        institutions, including documentation, reporting, and confidential
-                        record management.
-                    </li>
-                    <li>
-                        Supported project coordination and operational workflows through
-                        reporting, scheduling, and stakeholder communication.
-                    </li>
-                    <li>
-                        Collaborated with international and remote teams using digital
-                        workflow tools to support recruitment tracking, reporting, and
-                        project coordination.
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Academic & Research -->
-        <section id="research" class="section section-light reveal">
-            <div class="container">
-                <h2>Academic & Research Work</h2>
-
-                <p>
-                    I am a published co-author in the
-                    <strong>International Journal of Social Science and Humanities
-                        Research</strong>, with research focused on project performance within public-sector
-                    funded initiatives.
-                </p>
-
-                <div class="publication reveal">
-                    <h3>Effect of Physical Resource Capability on Project Performance</h3>
-                    <p>
-                        This research examined the relationship between resource capability
-                        and performance in government-funded infrastructure projects,
-                        reinforcing my analytical orientation and evidence-based approach to
-                        management and operations.
-                    </p>
-                    <a href="https://doi.org/10.5281/zenodo.10731696" target="_blank" rel="noopener noreferrer">
-                        View Publication (DOI)
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="section reveal">
-            <div class="container">
-                <h2>Skills & Competencies</h2>
-
-                <div class="grid-2">
-                    <ul>
-                        <li>Project coordination, monitoring & reporting</li>
-                        <li>Administrative & executive support</li>
-                        <li>Workflow and operations management</li>
-                        <li>Confidential documentation handling</li>
-                    </ul>
-
-                    <ul>
-                        <li>Research & data organization</li>
-                        <li>Microsoft Office Suite</li>
-                        <li>Asana, Trello</li>
-                        <li>Canva & digital documentation systems</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section id="certifications" class="section section-light reveal">
-            <div class="container">
-                <h2>Certifications & Professional Development</h2>
-
-                <ul class="cert-list">
-                    <li>Virtual Assistance Certification - ALX Africa</li>
-                    <li>AI Career Essentials - ALX Africa</li>
-                    <li>Asana Workflow Specialist</li>
-                    <li>CBRE Project Management Job Simulation - Forage</li>
-                    <li>ICT Certification - Kenya Red Cross Society / DOT</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects" class="section section-light reveal">
-            <div class="container">
-                <h2>Selected Projects</h2>
-                <p class="section-lead">A selection of work, process templates, and reporting products that showcase
-                    process-driven improvements.</p>
-
-                <div class="project-grid">
-                    <article class="project-card">
-                        <a href="assets/images/experience-bg.jpg" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/images/experience-bg.jpg" alt="Project thumbnail — dashboard"
-                                loading="lazy">
-                            <div class="project-meta">
-                                <h3>Operational Dashboard</h3>
-                                <p>Reporting templates and workflow analytics.</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card">
-                        <a href="assets/images/about-bg.jpg" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/images/about-bg.jpg" alt="Project thumbnail — process" loading="lazy">
-                            <div class="project-meta">
-                                <h3>Process Documentation</h3>
-                                <p>Standard operating procedures and records management.</p>
-                            </div>
-                        </a>
-                    </article>
-
-                    <article class="project-card">
-                        <a href="assets/images/hero-bg.jpg" target="_blank" rel="noopener noreferrer">
-                            <img src="assets/images/hero-bg.jpg" alt="Project thumbnail — communications"
-                                loading="lazy">
-                            <div class="project-meta">
-                                <h3>Stakeholder Communications</h3>
-                                <p>Templates and presentation support for stakeholder engagement.</p>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Contact -->
-    <section id="contact" class="section section-light reveal">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p>Let's collaborate on your next project. I'm always open to discussing new opportunities and challenges.</p>
-            
-            <div class="contact-form">
-                <form class="form-grid" action="mailto:musyokitabitha@gmail.com" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Your Name</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required aria-required="true">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required aria-required="true">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <select id="subject" name="subject" class="form-select">
-                            <option value="">Select a topic</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="project">Project Collaboration</option>
-                            <option value="opportunity">Career Opportunity</option>
-                            <option value="consultation">Consultation</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." rows="5" required aria-required="true"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="form-submit">
-                            <span class="submit-text">Send Message</span>
-                            <span class="submit-icon">→</span>
-                        </button>
-                    </div>
-                </form>
-                <p class="form-note">Submitting this form will open your email app with the details pre‑filled. If nothing happens, please email me directly at <a href="mailto:musyokitabitha@gmail.com">musyokitabitha@gmail.com</a>.</p>
+            <a class="navbar-brand fw-bold fs-3" href="#">Tabitha Musyoki</a>
+            <div class="d-flex align-items-center order-lg-3 ms-lg-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="btn btn-link text-decoration-none me-3" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#" class="btn btn-primary cta-btn d-none d-lg-block">Download Resume</a>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-            
-            <div class="contact-info">
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span class="icon-envelope">✉</span>
-                    </div>
-                    <div class="info-content">
-                        <h3>Email</h3>
-                        <p><a href="mailto:musyokitabitha@gmail.com" class="email-link">musyokitabitha@gmail.com</a></p>
+
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li><a class="nav-link px-3" href="#about">About</a></li>
+                    <li><a class="nav-link px-3" href="#experience">Experience</a></li>
+                    <li><a class="nav-link px-3" href="#skills">Skills</a></li>
+                    <li><a class="nav-link px-3" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link px-3" href="#testimonials">Testimonials</a></li>
+                    <li><a class="nav-link px-3" href="#contact">Contact</a></li>
+                </ul>
+                <div class="d-lg-none mt-3 text-center">
+                    <a href="#" class="btn btn-primary cta-btn w-100">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-7">
+                    <h1 class="display-3 fw-bold">Tabitha Wayua Musyoki</h1>
+                    <!-- Typing Animation Container -->
+                    <p class="lead fs-3 mb-4"><span id="typing-text"></span><span class="cursor">|</span></p>
+                    <p class="fs-5 mb-4 opacity-90">Organized, tech-savvy professional delivering executive support,
+                        project coordination, and workflow optimization across global and local teams.</p>
+                    <div>
+                        <a href="#contact" class="btn btn-light btn-lg px-5 py-3 cta-btn me-3">Let's Connect</a>
+                        <a href="https://linkedin.com/in/tabitha-musyoki" target="_blank"
+                            class="btn btn-outline-light btn-lg px-5 py-3">View LinkedIn</a>
                     </div>
                 </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span class="icon-location">📍</span>
-                    </div>
-                    <div class="info-content">
-                        <h3>Location</h3>
-                        <p>Nairobi, Kenya</p>
-                    </div>
+                <div class="col-lg-5 text-center">
+                    <img src="images/Me.jpeg" alt="Tabitha Musyoki" class="profile-img rounded-circle mx-auto">
                 </div>
-                
-                <div class="info-card">
-                    <div class="info-icon">
-                        <span class="icon-clock">🕐</span>
-                    </div>
-                    <div class="info-content">
-                        <h3>Availability</h3>
-                        <p>Open to remote and global roles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">About Me</h2>
+                    <p class="lead">Detail-oriented professional with 5+ years in executive/administrative support and
+                        project coordination. Proven in managing calendars, confidential records, stakeholder
+                        communication, and remote team workflows using MS Office, Canva, Asana, Trello, and AI tools.
+                    </p>
+                    <p>I integrate AI (ChatGPT, Teachable Machine, NotebookLM) to automate tasks, enhance reporting
+                        accuracy, and drive smarter decisions. Passionate about streamlining processes and empowering
+                        teams in dynamic environments.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="bg-white p-4 rounded-4 shadow-sm h-100">
+                        <h5 class="fw-semibold">Quick Highlights</h5>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i>Published Researcher
+                            </li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i>International Remote
+                                Internship</li>
+                            <li class="mb-3"><i class="fa-solid fa-check text-success me-2"></i>ALX AI & VA Certified
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modern Footer -->
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h3>Tabitha Musyoki</h3>
-                <p>Administrative & Project Management Professional</p>
-                <p>Specializing in executive support, project coordination, and operations management with a focus on efficiency and excellence.</p>
-                
-                <div class="footer-social">
-                    <h4>Connect With Me</h4>
-                    <ul class="social-list">
-                        <li><a href="https://linkedin.com/in/tabitha-musyoki" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <span class="social-icon">in</span>
-                        </a></li>
-                        <li><a href="mailto:musyokitabitha@gmail.com" rel="noopener noreferrer" aria-label="Email">
-                            <span class="social-icon">✉</span>
-                        </a></li>
-                    </ul>
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-5 text-center">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Project Management Officer</h4>
+                            <p class="text-primary fw-semibold">Kenya Prisons Service (Nairobi) • Jan 2025 – Present</p>
+                            <ul>
+                                <li>Executive support to senior leadership in Directorate of Planning & Development</li>
+                                <li>Calendar, meetings, reports & Canva presentations</li>
+                                <li>Confidential records & compliance management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Project Management Associate Intern</h4>
+                            <p class="text-primary fw-semibold">Excelerate Organization (Dubai, Remote) • Feb–Apr 2025
+                            </p>
+                            <ul>
+                                <li>Remote project tracking with Asana & Trello</li>
+                                <li>ATS maintenance, reports & research for leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Prison Officer - Registry & Security</h4>
+                            <p class="text-primary fw-semibold">Kenya Prisons Service (Embu) • Sep 2020 – Dec 2024</p>
+                            <ul>
+                                <li>Registry operations & confidential personnel records</li>
+                                <li>Administrative, audit & compliance reporting</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul id="footer-links" class="footer-links" role="menubar" aria-label="Footer navigation">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#practice">Practice</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Services</h3>
-                <ul class="footer-services">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#practice">Professional Practice</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#research">Research Work</a></li>
-                    <li><a href="#skills">Skills & Certifications</a></li>
-                </ul>
+    <!-- Skills -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-5 text-center">Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">📅</div>
+                    <h5>Calendar &amp; Meetings</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📊</div>
+                    <h5>Reporting &amp; Canva</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🔒</div>
+                    <h5>Confidential Records</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🤖</div>
+                    <h5>AI Tools</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📋</div>
+                    <h5>Asana / Trello</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">💼</div>
+                    <h5>MS Office Suite</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📧</div>
+                    <h5>Virtual Assistance</h5>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📈</div>
+                    <h5>Project Coordination</h5>
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="copyright">&copy; 2026 Tabitha Musyoki. All rights reserved.</p>
-                <p class="footer-tagline">Excellence in Administrative & Project Management</p>
+    </section>
+
+    <!-- Portfolio & Modals Trigger -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-5 text-center">Selected Portfolio</h2>
+            <div class="row portfolio-grid g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal1"
+                        style="cursor: pointer;">
+                        <img src="https://via.placeholder.com/400x250/007bff/ffffff?text=Meeting+Agenda"
+                            class="card-img-top" alt="Meeting Agenda">
+                        <div class="card-body">
+                            <h5>Fundraising Planning Sync</h5>
+                            <p class="card-text">Structured meeting coordination, task assignment & timelines</p>
+                            <span class="btn btn-outline-primary btn-sm stretched-link">View Details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal2"
+                        style="cursor: pointer;">
+                        <img src="https://via.placeholder.com/400x250/6610f2/ffffff?text=Travel+Planning"
+                            class="card-img-top" alt="Travel Pack">
+                        <div class="card-body">
+                            <h5>Travel & Event Planning</h5>
+                            <p class="card-text">Comprehensive itinerary, budget, etiquette & logistics</p>
+                            <span class="btn btn-outline-primary btn-sm stretched-link">View Details</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#portfolioModal3"
+                        style="cursor: pointer;">
+                        <img src="https://via.placeholder.com/400x250/007bff/ffffff?text=Creative+Portfolio"
+                            class="card-img-top" alt="Creative Portfolio">
+                        <div class="card-body">
+                            <h5>Creative Portfolio</h5>
+                            <p class="card-text">Visual overview of skills, AI projects & experience</p>
+                            <span class="btn btn-outline-primary btn-sm stretched-link">View Details</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section bg-light">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-5 text-center">Recommendations</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner text-center">
+                            <div class="carousel-item active">
+                                <i class="fas fa-quote-left fa-3x text-primary mb-4 opacity-25"></i>
+                                <blockquote class="blockquote">
+                                    <p class="mb-4 fs-5">"Tabitha is a highly organized and dedicated professional. Her
+                                        ability to manage complex schedules and produce detailed reports was invaluable
+                                        to our team."</p>
+                                    <footer class="blockquote-footer">Previous Supervisor <cite
+                                            title="Source Title">Kenya Prisons Service</cite></footer>
+                                </blockquote>
+                            </div>
+                            <div class="carousel-item">
+                                <i class="fas fa-quote-left fa-3x text-primary mb-4 opacity-25"></i>
+                                <blockquote class="blockquote">
+                                    <p class="mb-4 fs-5">"During her internship, Tabitha showed exceptional adaptation
+                                        to remote tools and AI workflows. She is proactive and a quick learner."</p>
+                                    <footer class="blockquote-footer">Program Manager <cite
+                                            title="Source Title">Excelerate</cite></footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-primary rounded-circle"
+                                aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-primary rounded-circle"
+                                aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section bg-dark text-white">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-5">
+                    <h2 class="display-5 fw-bold">Get In Touch</h2>
+                    <p class="lead opacity-75 mb-4">Interested in collaborating or discussing opportunities? Reach out
+                        directly using the form or my contact details.</p>
+                    <div class="contact-info">
+                        <p><i class="fa-solid fa-phone text-primary me-2"></i> +254 708 719 838</p>
+                        <p><i class="fa-solid fa-envelope text-primary me-2"></i> musyokitabitha@gmail.com</p>
+                        <p><i class="fab fa-linkedin text-primary me-2"></i> linkedin.com/in/tabitha-musyoki</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form action="https://formspree.io/f/xbjnodkw" method="POST"
+                        class="contact-form bg-white p-4 rounded-4 text-dark shadow-sm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label fw-bold">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label fw-bold">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-white-50 bg-black">
+        <div class="container">
+            <p>&copy; 2026 Tabitha Musyoki • Built with Modern Web Tech</p>
         </div>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top" title="Back to top"><span aria-hidden="true">↑</span></button>
+    <!-- Portfolio Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="portfolioModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <h2 class="fw-bold mb-3">Fundraising Planning Sync</h2>
+                    <p class="text-muted mb-4">Meeting Coordination & Task Management</p>
+                    <img src="https://via.placeholder.com/800x400/007bff/ffffff?text=Meeting+Agenda+Preview"
+                        class="img-fluid rounded mb-4 shadow" alt="Preview">
+                    <p class="text-start px-md-5">This document demonstrates the ability to organize high-level
+                        fundraising meetings. It includes a structured agenda, clear time allocations, and specific
+                        action items assigned to team members, ensuring productive and time-efficient synchronization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script src="assets/js/script.js" defer></script>
+    <!-- Modal 2 -->
+    <div class="modal fade" id="portfolioModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <h2 class="fw-bold mb-3">Travel & Event Planning</h2>
+                    <p class="text-muted mb-4">Logistics & Budgeting</p>
+                    <img src="https://via.placeholder.com/800x400/6610f2/ffffff?text=Travel+Plan+Preview"
+                        class="img-fluid rounded mb-4 shadow" alt="Preview">
+                    <p class="text-start px-md-5">A comprehensive travel pack designed for a team trip to Johannesburg.
+                        This portfolio piece showcases attention to detail in logistics, including flight itineraries,
+                        accommodation budgeting, local cultural etiquette, and emergency contacts.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="portfolioModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <h2 class="fw-bold mb-3">Creative Portfolio</h2>
+                    <p class="text-muted mb-4">Personal Branding & Skills</p>
+                    <img src="https://via.placeholder.com/800x400/007bff/ffffff?text=Portfolio+Preview"
+                        class="img-fluid rounded mb-4 shadow" alt="Preview">
+                    <p class="text-start px-md-5">A visually engaging presentation that summarizes professional
+                        experience, certifications, and AI-related projects. Designed to communicate value quickly to
+                        potential employers or clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
